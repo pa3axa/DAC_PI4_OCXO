@@ -1,6 +1,6 @@
 # DAC based 10Mhz PI4 modulator
 
-This is a 10Mhz reference oscillator with PI-4\
+This is a 10Mhz reference oscillator with PI4\
 modulation for use in Microwave Beacons.\
 It is selfcontained once programmed for the right\
 frequency and Callsign in both FSK and PI4.
