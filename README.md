@@ -1,4 +1,5 @@
-# DAC based 10Mhz Reference, PI4 and CW-FSK modulator
+# DAC based 10Mhz OCXO Reference\
+ PI4 and CW-FSK modulator
 
 This is a 10Mhz reference oscillator with PI4 and\
 CW-FSK modulation for use in Microwave Beacons.\
