@@ -58,8 +58,7 @@
  right frequency's for CW and PI4
 
  During setup() the RC-oscillator is adjusted
- to improve accuracy.
-
+ to improve symbol accuracy.
 
  The control range in the prototype around 10Mhz
  is about 0,1877 Hz / digit. This will vary
@@ -92,7 +91,7 @@ const int MAX5217 = 0x1C;
 
 
 //Setup your DAC values
-//----------------------------------------
+//----------------------------------------------------------------------------------------
 const uint16_t cwm = 0x7E22;
 const uint16_t cws = 0x75D0;
 const uint16_t pi0 = 0x7BB2;
@@ -194,7 +193,7 @@ long int r0, r1, r2, r3, r4, r5;
 
 
 // Write data to ADF code developed by PA0FYM, PA3AXA Hardware
-//------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 void write2PLL(uint32_t PLLword) {          // clocks 32 bits word  directly to the ADF4351
                                             // msb (b31) first, lsb (b0) last
@@ -218,7 +217,7 @@ void write2PLL(uint32_t PLLword) {          // clocks 32 bits word  directly to 
 
 
 // FSK CW Routines
-//------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 void dit(){
 
@@ -315,7 +314,7 @@ void sendmsg(char *txstr)
 
 
 /* Send PI4
-------------------------------------------------------------
+//----------------------------------------------------------------------------------------
  We have to deal with symbols 0 to 3 and with 4 frequency's
 
 
@@ -364,7 +363,7 @@ void sendpi4(){
 
                                    
 // Setup Hardware Defaults
-//------------------------------------------------------------
+//----------------------------------------------------------------------------------------
 
 void setup () {
 
@@ -483,47 +482,8 @@ CW FSK space frequency, -400 Hz   : 3.400.924.600 Hz
 } // End Setup
 
 
-
-/* Testmode
-//-------------------------------------------------------------------------------------------------
-
-void testmode(){
-
-
-      // Set CW Carrier
-      write2PLL(r0);                      // ADF Write
-
-while ( digitalRead(GPI_pin) == HIGH )
-      {
-      // Align Frequency Span
-      analogWrite(PWM_pin, 127);    // PWM Correction 0 Hz
-      delay(dsymbol);
-      
-      analogWrite(PWM_pin, 27);     // PWM Correction MAX+
-      delay(dsymbol);
-
-      analogWrite(PWM_pin, 227);    // PWM Correction MAX-
-      delay(dsymbol);
-      }
-      
-      delay(2000);
-      
-while ( digitalRead(GPI_pin) == HIGH )
-      {
-      // Align Carrier Frequentie 
-      analogWrite(PWM_pin, 127);    // PWM Correction 0 Hz
-      delay(dsymbol);
-      }
-      delay(2000);
-      testmode();
-
-} // To end testmode Reboot
-
-*/
-
-
 /* main loop total sequence should last 60 sec when transmitting PI4 */
-//------------------------------------------------------------------------------------------------- 
+//----------------------------------------------------------------------------------------
 
 void loop() {
 

@@ -1,9 +1,9 @@
-# DAC based 10Mhz PI4 modulator
+# DAC based 10Mhz Reference, PI4 and CW-FSK modulator
 
-This is a 10Mhz reference oscillator with PI4\
-modulation for use in Microwave Beacons.\
+This is a 10Mhz reference oscillator with PI4 and\
+CW-FSK modulation for use in Microwave Beacons.\
 It is selfcontained once programmed for the right\
-frequency and Callsign in both FSK and PI4.
+frequency and Callsign in both PI4 and CW-FSK.
 
 The board is designed around the CTI-OSC5A2B02\
 10Mhz OCXO which is still avialable for reasonable\
@@ -27,7 +27,7 @@ with 10khz_PB4.ino program and a frequency counter.
 With the program PI4_Frequency__Setup_MAX5217.ino\
 interactive frequency adjustment can be preformed,\
 the found values for your OCXO need to be hardcode\
-in PI7ALK_ADF43XX_DAC_V1.0.
+in PI7ALK_X_ADF43XX_DAC_V1.0.
 
 The same is true for the callsign in both CW-FSK as PI4.
 
